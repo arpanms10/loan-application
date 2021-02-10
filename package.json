@@ -18,6 +18,11 @@
     "start:build": "npm run build && web-dev-server --root-dir dist --app-index index.html --compatibility none --open"
   },
   "dependencies": {
+    "@lion/button": "^0.8.11",
+    "@lion/form-core": "^0.7.3",
+    "@lion/input": "^0.10.16",
+    "@lion/input-amount": "^0.8.16",
+    "@lion/input-range": "^0.5.16",
     "@lion/localize": "^0.15.5",
     "@vaadin/router": "^1.7.2",
     "@web/rollup-plugin-copy": "^0.2.0",
