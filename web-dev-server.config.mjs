@@ -1,12 +1,13 @@
 // import { hmrPlugin, presets } from '@open-wc/dev-server-hmr';
 
 /** Use Hot Module replacement by adding --hmr to the start command */
-const hmr = process.argv.includes('--hmr');
+// const hmr = process.argv.includes('--hmr');
 
 export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   nodeResolve: true,
-  open: '/demo/',
-  watch: !hmr,
+  open: '/dashBoard',
+  watch: true,
+  appIndex: './demo/index.html',
 
   /** Compile JS for older browsers. Requires @web/dev-server-esbuild plugin */
   // esbuildTarget: 'auto'
