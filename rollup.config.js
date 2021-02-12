@@ -9,11 +9,6 @@ import { copy } from '@web/rollup-plugin-copy';
 const baseConfig = createSpaConfig({
   // use the outputdir option to modify where files are output
   outputDir: 'dist',
-  plugins: [
-    copy({
-      targets: [{ src: 'src/images', dest: 'dist/images' }],
-    }),
-  ],
 
   // if you need to support older browsers, such as IE11, set the legacyBuild
   // option to generate an additional build just for this browser
@@ -30,6 +25,7 @@ export default merge(baseConfig, {
   // if you use createSpaConfig, you can use your index.html as entrypoint,
   // any <script type="module"> inside will be bundled by rollup
   input: './app.js',
+  plugins: [copy({ patterns: 'src/images/*.jpg' })],
 
   // alternatively, you can use your JS as entrypoint for rollup and
   // optionally set a HTML template manually
