@@ -7,7 +7,7 @@ export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   nodeResolve: true,
   open: '/dashBoard',
   watch: true,
-  appIndex: './demo/index.html',
+  appIndex: './index.html',
 
   /** Compile JS for older browsers. Requires @web/dev-server-esbuild plugin */
   // esbuildTarget: 'auto'

@@ -1,4 +1,8 @@
 import { html, css, LitElement } from 'lit-element';
+import { Router } from '@vaadin/router';
+import './header/Header.js';
+import './dashboard/Dashboard.js';
+import './LoanBasicDetails/BasicDetails.js';
 
 export class LoanApplication extends LitElement {
   static get styles() {
@@ -18,20 +22,24 @@ export class LoanApplication extends LitElement {
     };
   }
 
-  constructor() {
-    super();
-    this.title = 'Hey there';
-    this.counter = 5;
+  firstUpdated() {
+    this.getOverview();
   }
 
-  __increment() {
-    this.counter += 1;
+  getOverview() {
+    const outlet = this.shadowRoot.getElementById('outlet');
+    const router = new Router(outlet);
+    router.setRoutes([
+      { path: '/dashBoard', component: 'dash-board' },
+      { path: '/details', component: 'basic-details' },
+    ]);
   }
 
   render() {
     return html`
       <div>
-        <dash-board> </dash-board>
+        <loan-header></loan-header>
+        <div id="outlet"></div>
       </div>
     `;
   }

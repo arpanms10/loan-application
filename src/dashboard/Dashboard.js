@@ -14,10 +14,7 @@ export class Dashboard extends LitElement {
   }
 
   render() {
-    return html`
-      <loan-header></loan-header>
-      <dashboard-overview></dashboard-overview>
-    `;
+    return html` <dashboard-overview></dashboard-overview> `;
   }
 }
 window.customElements.define('dash-board', Dashboard);
