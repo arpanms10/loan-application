@@ -3,7 +3,7 @@ import { LocalizeMixin } from '@lion/localize';
 import './Dashboard-menu.js';
 import '../../locale/inline-data.js';
 
-export class DashboardOverview extends LocalizeMixin(LitElement) {
+export class DashboardNew extends LocalizeMixin(LitElement) {
   static get styles() {
     return css`
       :host {
@@ -40,19 +40,19 @@ export class DashboardOverview extends LocalizeMixin(LitElement) {
     super();
     this.data = [
       {
-        title: 'Home Loan',
+        title: 'Offer Home Loan',
         image: 'images/Home-Loans.jpg',
       },
       {
-        title: 'Personal Loan',
+        title: 'Offer Personal Loan',
         image: 'images/personal-Loan.jpg',
       },
       {
-        title: 'Car Loan',
+        title: 'Offer Car Loan',
         image: 'images/car loan.jpg',
       },
       {
-        title: 'Vacation Loan',
+        title: 'Offer Vacation Loan',
         image: 'images/vacation-loans.jpg',
       },
     ];
@@ -72,4 +72,4 @@ export class DashboardOverview extends LocalizeMixin(LitElement) {
     return html` <div class="container">${this._renderdashboardcard()}</div> `;
   }
 }
-window.customElements.define('dashboard-overview', DashboardOverview);
+window.customElements.define('dashboard-new', DashboardNew);

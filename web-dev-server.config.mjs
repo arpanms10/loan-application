@@ -5,7 +5,7 @@
 
 export default /** @type {import('@web/dev-server').DevServerConfig} */ ({
   nodeResolve: true,
-  open: '/dashBoard',
+  open: '/',
   watch: true,
   appIndex: './index.html',
 

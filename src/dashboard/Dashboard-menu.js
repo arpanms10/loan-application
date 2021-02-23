@@ -1,5 +1,7 @@
+/* eslint-disable class-methods-use-this */
 import { html, css, LitElement } from 'lit-element';
 import { LocalizeMixin } from '@lion/localize';
+import { Router } from '@vaadin/router';
 
 export class DashboardMenu extends LocalizeMixin(LitElement) {
   static get styles() {
@@ -41,13 +43,26 @@ export class DashboardMenu extends LocalizeMixin(LitElement) {
     };
   }
 
+  navigateToDetails() {
+    // console.log('clicked');
+    Router.go('/details');
+  }
+
+  _setTypeInLS() {
+    // console.log(this.title);
+    localStorage.setItem('type', this.title);
+    this.navigateToDetails();
+  }
+
   render() {
     return html`
       <div class="card">
-        <img src=${this.imageURL} alt="loan type" />
-        <div class="container">
-          <h4><b>${this.title}</b></h4>
-        </div>
+        <button @click=${this._setTypeInLS}>
+          <img src=${this.imageURL} alt="loan type" />
+          <div class="container">
+            <h4><b>${this.title}</b></h4>
+          </div>
+        </button>
       </div>
     `;
   }
